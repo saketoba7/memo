@@ -25,3 +25,4 @@ elsif Number ==2
    CSV.open("#{csvfile_n}.csv","a") do |csv|
       csv << ["#{content_n}"]
     end
+end
