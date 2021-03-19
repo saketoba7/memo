@@ -6,10 +6,10 @@ Number = gets.to_i
 
 if Number == 1
   puts "拡張子を除いたファイル名を入力してください"
-  csvfile = STDIN.gets
+  csvfile = gets.chomp
 
  puts "メモを入力"
- content = gets
+ content = gets.chomp
  puts "入力後、Ctrl + D で保存"
   
 CSV.open("#{csvfile}.csv","a") do |csv|
@@ -18,10 +18,10 @@ CSV.open("#{csvfile}.csv","a") do |csv|
  
 elsif Number ==2
   puts "編集したいファイル名を入力してください"
-   csvfile_n = STDIN.gets
+   csvfile_n = gets.chomp
     puts "編集したい内容を入力してください"
     puts "入力後、Ctrl + D で保存"
-    content_n = gets
+    content_n = gets.chomp
    CSV.open("#{csvfile_n}.csv","a") do |csv|
       csv << ["#{content_n}"]
     end
